@@ -29,20 +29,26 @@ The 14th Festival Lumière ended in triumph and a standing ovation for Tim Burto
 d = {}
 
 
-alfabet = "abc"
-s = "abcabcabcabcabcabc"
+alfabet = string.ascii_letters
+s = str.lower()
 
 for ch in alfabet:
-    count = 0
-    for sch in s:
-        if sch == ch:
-            count += 1
-    d[ch] = count
+    d[ch] = s.count(ch)
 
-print(d)
+#for key, value in d.items():
+#    print(key, "-", value)
 
-text = {}
+max_key = "a"
+min_key = "a"
 
-text["f"] = 10
 
-print(text)
+for key in d:
+    if d[key] > d[max_key]:
+        max_key = key
+
+    if d[key] < d[min_key]:
+        min_key = key
+
+print(max_key, "-", d[max_key])
+print(min_key, "-", d[min_key])
+
